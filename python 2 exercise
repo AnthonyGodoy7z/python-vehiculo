@@ -1,0 +1,51 @@
+class Vehiculo:
+    def __init__(self, impuesto, rodaje, anio, multas):
+        self.impuesto = impuesto
+        self.rodaje = rodaje
+        self.anio = anio
+        self.multas = multas
+
+    def calcular_anio(self):
+        valorMatricula = 0 
+        if self.anio <=2026 and self.anio >= 2021: #se detecta de que anio es el vehiculo para que asi se le ponga el precio
+         valorMatricula = 1200
+        elif self.anio <= 2020 and self.anio >= 2015:
+         valorMatricula = 700
+        elif self.anio <= 2014 and self.anio >= 2010:
+         valorMatricula = 100
+        return valorMatricula
+    
+    def calcualar_rodaje(self):
+       valor = 0
+       
+       if self.rodaje == "auto":
+          valor = 18
+       elif self.rodaje == "camioneta":
+          valor = 22
+       elif self.rodaje == "camion":
+          valor = 43
+       elif self.rodaje == "taxi" or self.rodaje == "bus":
+          valor = 41
+       return valor
+    
+
+    def calcular_impuesto(self):
+       impuesto = 0
+       if self.impuesto == "auto":
+          impuesto = 18
+       elif self.impuesto == "camioneta":
+          impuesto = 22
+       elif self.impuesto == "camion":
+          impuesto = 43
+       return impuesto
+    
+    def calcular_multas(self):
+       multa = 0
+       if self.multas == "uso de telefono":
+          multa = 59
+       elif self.multas == "en estado etilico":
+          multa = 452
+       elif self.multa == "estacionar donde no debe":
+          multa = 63
+       return multa
+    
