@@ -1,0 +1,28 @@
+class Vehiculo:
+    def __init__(self, marca, modelo, anio):
+        self.marca = marca
+        self.modelo = modelo
+        self.anio = anio
+
+    def mostrar_informacion(self):
+        return f"{self.marca} {self.modelo} ({self.anio})"
+
+#uso de la clase vehiculo
+vehiculo1 = Vehiculo("Toyota", "Corolla", 2020)
+vehiculo2 = Vehiculo("Hyundai", "GETz", 2010)
+print(vehiculo1.mostrar_informacion()) #se imprime la informacion del vehiculo
+print(vehiculo2.mostrar_informacion())
+
+def matriculaCarros(anio):
+    valorMatricula = 0 
+    if anio <=2026 and anio >= 2021: #se detecta de que anio es el vehiculo para que asi se le ponga el precio
+        valorMatricula = 1200
+    elif anio <= 2020 and anio >= 2015:
+        valorMatricula = 700
+    elif anio <= 2014 and anio >= 2010:
+        valorMatricula = 100
+    print(f"El valor de la matricula es: {valorMatricula}") #se imprime el valor detectado
+
+#Uso de la función
+matriculaCarros(vehiculo1.anio)
+matriculaCarros(vehiculo2.anio)
